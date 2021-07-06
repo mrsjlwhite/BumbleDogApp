@@ -1,11 +1,11 @@
 <div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
+    <div *ngIf="!registerMode && !aboutMode" style="text-align: center;">
         <h1>Find your fetch partner</h1>
         <p class="lead">Check out your matches! A stroll through the dog park could be happening today!<i
                 class="fas fa-paw"></i></p>
         <div class="text-center">
             <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
-            <button class="btn btn-info btn-lg">Learn more</button>
+            <button (click)="aboutToggle()" class="btn btn-info btn-lg">Learn more</button>
         </div>
     </div>
 
@@ -16,6 +16,28 @@
                 <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
             </div>
             <div class="col-4"></div>
+        </div>
+    </div>
+
+    <div *ngIf="aboutMode" class="container">
+        <div class="row justify-align-center">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <p> Just a dummy app to that includes features such as: </p>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <ul style="width: 45%;">
+                                <li>registering user</li>
+                            </ul>
+                            <br />
+                            <button (click)="aboutToggle()" class="btn btn-info btn-lg"><i
+                                    class="fas fa-home"></i></button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
