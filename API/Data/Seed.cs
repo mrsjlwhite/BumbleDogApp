@@ -20,7 +20,7 @@ namespace API.Data
             {
                 using var hmac = new HMACSHA512();
                 user.UserName = user.UserName.ToLower();
-                user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Passw0rd")); // todo: upgrade. not good practice
+                user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Passw0rd")); // TODO: upgrade. not good practice
                 user.PasswordSalt = hmac.Key;
 
                 context.Users.Add(user);
